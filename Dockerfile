@@ -55,7 +55,7 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # fix permission issue
-chown -R jenkins:jenkins $ANDROID_HOME
+RUN chown -R jenkins:jenkins $ANDROID_HOME
 
 USER jenkins
 
