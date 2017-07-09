@@ -53,7 +53,10 @@ RUN apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 -y
 # Cleanup
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-	
+
+# fix permission issue
+chown -R jenkins:jenkins $ANDROID_HOME
+
 USER jenkins
 
 # List desired Jenkins plugins here
